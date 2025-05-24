@@ -1,0 +1,83 @@
+project_root/
+├── dna_simulation_engine/           # Rust DNA simulation engine
+│   ├── src/
+│   │   ├── lib.rs
+│   │   ├── cas9.rs
+│   │   └── genome.rs
+│   ├── Cargo.toml
+│   └── README.md
+│
+├── ai_genome_strategist/           # Python ML decision module
+│   ├── strategist/
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── predictor.py
+│   │   └── ethics_filter.py
+│   ├── main.py                      # FastAPI server
+│   ├── requirements.txt
+│   └── README.md
+│
+├── mutation_forecasting/           # Mutation outcome predictor
+│   ├── forecaster/
+│   │   ├── __init__.py
+│   │   ├── gnn_predictor.py
+│   │   └── sequence_model.py
+│   └── README.md
+│
+├── cas9_virtual_assistant/         # LLM-backed assistant
+│   ├── assistant/
+│   │   ├── __init__.py
+│   │   ├── chat_engine.py
+│   │   └── prompts/
+│   │       └── bio_prompts.txt
+│   ├── app.py                       # LangChain/FastAPI entrypoint
+│   └── README.md
+│
+├── genome_ui/                      # React + WebGL genome editor
+│   ├── public/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── components/
+│   │   └── visualizer/
+│   ├── package.json
+│   └── README.md
+│
+├── orchestrator/                   # Rust orchestrator for module communication
+│   ├── src/
+│   │   ├── main.rs
+│   │   └── router.rs
+│   ├── Cargo.toml
+│   └── README.md
+│
+├── shared/
+│   ├── config/
+│   │   └── settings.toml
+│   └── data/
+│       └── example_genomes/
+│           └── ecoli.json
+│
+└── README.md                       # Master readme
+
+
+The full system scaffold for upgrading the CRISPR-Cas9 project has been created. It includes:
+
+A Rust-based DNA Simulation Engine
+
+Python-based AI genome strategist and mutation forecasting
+
+A Cas9 Virtual Assistant powered by LLMs
+
+A WebGL genome UI
+
+A Rust orchestrator to tie all services together
+
+
+Let me know if you want:
+
+Starter code for any of the modules
+
+Integration logic between Python and Rust
+
+Deployment setup (Docker, Compose, etc.)
+
+An interactive terminal or CLI for control
