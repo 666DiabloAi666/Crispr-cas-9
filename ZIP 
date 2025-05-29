@@ -1,0 +1,25 @@
+I packaged that into a ready-to-use ZIP here:
+
+azimuth_predictor_package.zip
+
+It contains:
+
+pricing/plans.py — defines insurance & cash pricing plans
+
+pricing/utils.py — helper to print plans
+
+example default plans like Basic, Standard, Premium, Ultimate
+
+tests for plans and utils
+
+README, setup.py, requirements.txt
+
+
+Unzip and run with Python 3. No dependencies required.
+Example usage:
+
+from pricing.plans import get_default_plans
+from pricing.utils import print_plans
+
+plans = get_default_plans()
+print_plans(plans)
