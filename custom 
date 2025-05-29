@@ -1,0 +1,58 @@
+
+---
+
+Medicare Health Department Pricing Packages
+
+Plan Name	Coverage Description	Monthly Premium (Insurance)	Deductible	Co-pay	Cash Price (One-Time)	Notes
+
+Medicare Basic	Hospital coverage (Part A)	$150	$1,556	$0	$3,000	Covers inpatient hospital stays
+Medicare Standard	Hospital + Medical coverage (Part A + B)	$300	$1,556	$20 per doctor visit	$6,500	Includes doctor visits & outpatient care
+Medicare Plus	Parts A, B + Prescription drug coverage (Part D)	$450	$1,556	$20 doctor / $10 drug copay	$10,000	Includes prescription drug benefits
+Medicare Premium	All Parts + Vision & Dental extras	$600	$1,000	$15 doctor / $10 drug copay	$15,000	Comprehensive coverage & wellness perks
+
+
+
+---
+
+How to use in Python package form
+
+pricing/plans.py (Medicare version)
+
+class MedicarePlan:
+    def __init__(self, name, coverage, monthly_premium, deductible, copay, cash_price, notes=""):
+        self.name = name
+        self.coverage = coverage
+        self.monthly_premium = monthly_premium
+        self.deductible = deductible
+        self.copay = copay
+        self.cash_price = cash_price
+        self.notes = notes
+
+    def __repr__(self):
+        return (
+            f"{self.name} Plan:\n"
+            f"  Coverage: {self.coverage}\n"
+            f"  Monthly Premium: ${self.monthly_premium}\n"
+            f"  Deductible: ${self.deductible}\n"
+            f"  Co-pay: {self.copay}\n"
+            f"  Cash Price (One-time): ${self.cash_price}\n"
+            f"  Notes: {self.notes}"
+        )
+
+def get_medicare_plans():
+    return [
+        MedicarePlan("Medicare Basic", "Hospital coverage (Part A)", 150, 1556, "$0", 3000,
+                    "Covers inpatient hospital stays"),
+        MedicarePlan("Medicare Standard", "Hospital + Medical (Part A + B)", 300, 1556, "$20/visit", 6500,
+                    "Includes doctor visits & outpatient care"),
+        MedicarePlan("Medicare Plus", "Parts A, B + Prescription (Part D)", 450, 1556, "$20 doctor / $10 drug", 10000,
+                    "Includes prescription drug benefits"),
+        MedicarePlan("Medicare Premium", "All Parts + Vision & Dental extras", 600, 1000, "$15 doctor / $10 drug", 15000,
+                    "Comprehensive coverage & wellness perks"),
+    ]
+
+
+---
+
+!
+
