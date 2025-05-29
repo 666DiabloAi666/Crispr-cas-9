@@ -1,0 +1,64 @@
+---
+
+Here’s the full CLI code snippet to include in the package:
+
+# cli.py
+
+import numpy as np
+from pricing.medicare_plans import get_medicare_plans
+from nero_kera_net.model import NeroKeraNet
+
+def get_user_input():
+    print("Enter your personal details to get Medicare plan recommendations.\n")
+    while True:
+        try:
+            age = int(input("Age (years): "))
+            if not (18 <= age <= 120):
+                raise ValueError
+            break
+        except ValueError:
+            print("Please enter a valid age between 18 and 120.")
+
+    while True:
+        try:
+            risk = float(input("Health risk score (0.0 - 1.0): "))
+            if not (0.0 <= risk <= 1.0):
+                raise ValueError
+            break
+        except ValueError:
+            print("Please enter a decimal number between 0.0 and 1.0.")
+
+    while True:
+        try:
+            income = float(input("Income level (0.0 - 1.0): "))
+            if not (0.0 <= income <= 1.0):
+                raise ValueError
+            break
+        except ValueError:
+            print("Please enter a decimal number between 0.0 and 1.0.")
+
+    return np.array([age, risk, income, 0])  # dummy last feature for compatibility
+
+def main():
+    user_features = get_user_input()
+    plans = get_medicare_plans()
+    model = NeroKeraNet()
+
+    scores = model.predict(user_features, plans)
+    ranked = sorted(zip(plans, scores), key=lambda x: x[1], reverse=True)
+
+    print("\nMedicare Plan Recommendations (Highest Score First):\n")
+    for plan, score in ranked:
+        print(f"{plan.name}: Score {score:.2f}")
+        print(f"  Coverage: {plan.coverage}")
+        print(f"  Monthly Premium: ${plan.monthly_premium}")
+        print(f"  Deductible: ${plan.deductible}")
+        print(f"  Co-pay: {plan.copay}")
+        print(f"  Notes: {plan.notes}")
+        print("-" * 40)
+
+if __name__ == "__main__":
+    main()
+
+
+---
