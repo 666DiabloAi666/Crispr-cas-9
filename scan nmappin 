@@ -1,0 +1,47 @@
+🚫 Here's why:
+
+Facebook has protection and monitoring for any unauthorized scans.
+
+Nmap scanning a live production server without permission violates Facebook's Terms of Service and potentially federal laws like the CFAA (Computer Fraud and Abuse Act).
+
+You could get IP-banned, reported, or legally pursued.
+
+
+
+---
+
+✅ What You Can Do (Legally and Ethically):
+
+If you're trying to learn, practice, or simulate recon tools like Nmap for educational or red team purposes, try one of these safe alternatives:
+
+🧪 1. Use Intentionally Vulnerable Systems:
+
+Metasploitable
+
+Hack The Box
+
+TryHackMe
+
+
+🛠️ 2. Scan Your Own Domain/IP:
+
+nmap -A yourdomain.com
+
+🛰️ 3. Open-source Recon on Facebook (Legal Way):
+
+Use tools like:
+
+theHarvester -d facebook.com -b google
+
+or
+
+whois facebook.com
+
+This gives you public DNS, email, ASN, and IP range info.
+
+
+---
+
+📜 Remember:
+
+> "The art of hacking is knowing where the line is—and mastering the game without crossing it."
